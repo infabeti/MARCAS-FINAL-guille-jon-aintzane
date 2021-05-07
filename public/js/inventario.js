@@ -162,7 +162,7 @@ function estaLogged() {
 }
 
 
-/*
+
 module.exports = {
 	addProduct : addProduct,
 	borrar : borrar,
@@ -170,4 +170,4 @@ module.exports = {
 	refrescarCabecera : refrescarCabecera,
 	recalcularTotales : recalcularTotales,
 	estaLogged : estaLogged
-}*/
+}
