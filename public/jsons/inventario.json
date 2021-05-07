@@ -1,0 +1,11 @@
+[{"nombre":"hamburguesa","cantidad":2, "precio":6},
+{"nombre":"pizza","cantidad":10, "precio":18},
+{"nombre":"menu","cantidad":10, "precio":15},
+{"nombre":"menú del día","cantidad":20, "precio":18},
+{"nombre":"comida casera","cantidad":5, "precio":20},
+{"nombre":"ensalada","cantidad":5, "precio":12},
+{"nombre":"pintxo","cantidad":5, "precio":2},
+{"nombre":"pintxo2","cantidad":1, "precio":2},
+{"nombre":"refresco","cantidad":2, "precio":2},
+{"nombre":"cafe","cantidad":50, "precio":1.5},
+{"nombre":"tortilla","cantidad":2, "precio":2}]

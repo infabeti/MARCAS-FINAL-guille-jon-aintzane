@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Food-Eat! - Restaurantes en Elorrieta - </title>
+  <meta name="description" content="Facilitamos a la hostelería de Elorrieta facilidades para promocionar su negocio">
+  <meta name="keywords"
+    content="restaurantes, bares, cafeterías, panaderías, tahonas, elorrieta, SanInacio, Bilbao, comida">
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!--Icon library-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--fonts-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Merriweather&family=Pacifico&family=Source+Sans+Pro&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="./css/MyCss.css">
+  <!-- My JS -->
+  <script src="js/inventario.js"></script>
+  <script src="js/cesta.js"></script>
+  <script src="js/usuarios.js"></script>
+
+</head>
+
+<body>
+  <header class="container-fluid sticky-top m-0 p-0 ">
+    <nav class="col-12 navbar navbar-expand-md m-0 ">
+      <button class="navbar-toggler boton m-auto" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <p class="poiret">Food-Eat!</p>>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item elmenu px-2 px-lg-5 pt-1 pt-md-0 text-center ">
+            <a class="nav-link active p-0 elmenu poiret" href="landingPage.html">Inicio</a>
+          </li>
+          <li class="nav-item dropdown elmenu px-2 px-lg-5 pt-1 pt-md-0 text-center">
+            <a class="nav-link dropdown-toggle d-block p-0 elmenu poiret" data-toggle="dropdown" role="button"
+              aria-haspopup="true" aria-expanded="false">Restaurantes</a>
+            <div class="dropdown-menu fondomenu ">
+              <div class="row p-3">
+                <p class="desplegablenolink col-12 poiret">Todos los restaurantes y cafeterías</p>
+                <div class="col-12 col-md-4">
+                  <a class="dropdown-item desplegable" href="restaurante1.html">Restaurante1</a>
+                </div>
+                <div class="col-12 col-md-4">
+                  <a class="dropdown-item desplegable" href="restaurante2.html">Restaurante2</a>
+                </div>
+              </div>
+            </div>
+          <li class="nav-item elmenu px-2 px-lg-5 pt-3 pt-md-0 text-center">
+            <a class="nav-link p-0 elmenu poiret" href="iniciarsesion.html" id="botonLogIn">Iniciar Sesión</a>
+          </li>
+          <li class="nav-item elmenu px-2 px-lg-5 pt-3 pt-md-0 text-center">
+            <a class="nav-link p-0 elmenu poiret" href="register.html" id="botonRegistrarse">Registrarse</a>
+          </li>
+          <li class="nav-item elmenu pl-2 pl-lg-2 pt-3 pt-md-0 text-center">
+            <a class="pl-md-5 fa fa-shopping-cart fa-lg pt-2" href="carrito.html" target="self"></a>
+            <label class="contadorCarrito" id="numTotalProductos"></label>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <main class="container">
+    <div class="py-5 text-center">
+      <h2>Food-Eat!</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">Tu cesta de la compra</span>
+          <label class="contadorCarrito" id="numTotalProductos"></label>>
+        </h4>
+        <ul class="list-group mb-3" id="listaCesta">
+
+        </ul>
+
+        <form class="card p-2">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Promo code">
+            <div class="input-group-append">
+              <button onclick="borrar()" class="btn btn-secondary">Borrar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Dirección</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Nombre</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Se necesita tu nombre.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Apellidos</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Se necesita tu apellido.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="username">Usuario</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input type="text" class="form-control" id="username" placeholder="Username" required="">
+              <div class="invalid-feedback" style="width: 100%;">
+                Tu nombre de usuario.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email">Email <span class="text-muted">(Opcional)</span></label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+            <div class="invalid-feedback">
+              Por favor, escribe tu email.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="address">Dirección</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+            <div class="invalid-feedback">
+              La dirección a la que quieres realizar el envío.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="address2">Piso <span class="text-muted"></span></label>
+            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="country">Localidad</label>
+              <select class="custom-select d-block w-100" id="country" required="">
+                <option value="">Elige</option>
+                <option>Bilbao</option>
+                <option>Lutxana</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor elija una localidad válida
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="zip">Código Postal</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required="">
+              <div class="invalid-feedback">
+                Introduce el código Postal.
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="same-address">
+            <label class="custom-control-label" for="same-address">La dirección de envío y facturación será la
+              misma</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="save-info">
+            <label class="custom-control-label" for="save-info">Guardar información para más tarde</label>
+          </div>
+          <hr class="mb-4">
+
+          <h4 class="mb-3">Pago</h4>
+
+          <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+              <label class="custom-control-label" for="credit">Tarjeta de crédito</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="paypal">Paypal</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="cc-name">Nombre de titular</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+              <small class="text-muted">Escriba el nombre tal y como aparece en la tarjeta</small>
+              <div class="invalid-feedback">
+                Nombre de la tarjeta es necesario
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="cc-number">Número de la tarjeta</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+              <div class="invalid-feedback">
+                El número de la tarjeta es necesario.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <label for="cc-expiration">Fecha de expiración</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+              <div class="invalid-feedback">
+                Fecha de expiración es necesaria
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="cc-expiration">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+              <div class="invalid-feedback">
+                Código de seguridad es necesario
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" onclick="comprar()">Finalizar Compra</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container-fluid mx-0 mt-5 mb-0 px-5 pt-4 ">
+    <div class="row ">
+
+      <section class="col-12 col-sm-6 col-md-3">
+        <p class="text-center"><a href="#" target="self">Mapa del sitio</a></p>
+        <p class="text-center"><a href="#" target="self">Datos generales</a></p>
+        <p class="text-center"><a href="#" target="self">Trabaja con nosotros</a></p>
+      </section>
+      <section class="col-12 col-sm-6 col-md-3">
+        <p class="text-center"><a href="#" target="self">Condiciones generales</a></p>
+        <p class="text-center"><a href="#" target="self">Condiciones de compra</a></p>
+        <p class="text-center"><a href="#" target="self">Política de privacidad</a></p>
+      </section>
+      <section class="col-12 col-sm-6 col-md-3">
+        <p class="text-center"><a href="#" target="self">Recomendaciones</a></p>
+        <p class="text-center"><a href="#" target="self">Teléfono</a></p>
+        <p class="text-center"><a href="#" target="self">Dirección</a></p>
+      </section>
+      <section class="col-12 col-sm-6 col-md-3">
+        <p class="text-center">¡Síganos!</p>
+        <div class="text-center">
+          <a href="https://es-es.facebook.com/" target="blank" class="fa fa-lg fa-facebook px-1"></a>
+          <a href="https://www.instagram.com/" target="blank" class="fa fa-lg fa-instagram px-1"></a>
+          <a href="https://twitter.com/explore" target="blank" class="fa fa-lg fa-twitter px-1"></a>
+          <a href="https://www.youtube.com/" target="blank" class="fa fa-lg fa-youtube px-1"></a>
+        </div>
+      </section>
+      <p class="col-12 mt-4 text-center">Food-Eat © 2020 </p>
+    </div>
+  </footer>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script>
+    refrescarCarrito();
+    refrescarLogin();
+  </script>
+</body>
+
+</html>
