@@ -56,8 +56,8 @@ function crearCesta() {
 	}
 }
 
-/*module.exports = {
+module.exports = {
 
 	refrescarCarrito : refrescarCarrito,
 	crearCesta : crearCesta
-}*/
+}

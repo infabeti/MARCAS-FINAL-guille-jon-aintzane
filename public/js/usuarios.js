@@ -97,10 +97,13 @@ function mostrarAtributo(ide) {
         ide.removeAttribute("hidden");
     }
 }
-/*
+
 module.exports = {
-    loin : login,
+    login : login,
     isLogged : isLogged,
+    logout :logout,
     registrarse : registrarse,
-    refrescarLogin : refrescarLogin
-}*/
+    refrescarLogin : refrescarLogin,
+    ocultarAtributo : ocultarAtributo,
+    mostrarAtributo : mostrarAtributo
+}

@@ -91,4 +91,13 @@ document.getElementById("distancia1").innerHTML = distanciaRest1;
 function escribirDistancia2(){
     document.getElementById("distancia2").innerHTML = distanciaRest2;
     }
-    
+  
+
+module.exports = {
+    getPosition : getPosition,
+    initMap : initMap,
+    calcDist :calcDist,
+    toRad : toRad,
+    escribirDistancia : escribirDistancia,
+    escribirDistancia2 : escribirDistancia2
+}
