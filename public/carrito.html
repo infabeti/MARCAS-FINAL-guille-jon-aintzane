@@ -24,11 +24,9 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="./css/MyCss.css">
   <!-- My JS -->
-  <script src="js/bundle.js">
-    window.onload = AutoCompletar();
-  </script>
-
-
+<script src="js/bUsusario.js"></script>
+<script src="js/bInventario.js"></script>
+<script src="js/bCesta.js"></script>
 </head>
 
 <body>
@@ -94,7 +92,7 @@
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Promo code">
             <div class="input-group-append">
-              <button onclick="borrar()" class="btn btn-secondary">Borrar</button>
+              <button onclick="usuario.borrar()" class="btn btn-secondary">Borrar</button>
             </div>
           </div>
         </form>
@@ -231,7 +229,7 @@
             </div>
           </div>
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block" onclick="comprar()">Finalizar Compra</button>
+          <button class="btn btn-primary btn-lg btn-block" onclick="cesta.comprar()">Finalizar Compra</button>
         </form>
       </div>
     </div>
@@ -279,8 +277,8 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
   <script>
-    refrescarCarrito();
-    refrescarLogin();
+    inventario.refrescarCarrito();
+    usuario.refrescarLogin();
   </script>
 </body>
 

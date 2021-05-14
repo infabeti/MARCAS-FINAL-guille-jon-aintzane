@@ -86,9 +86,32 @@ let tortilla = new Object({
 });
 */
 /* Añadir producto ------------------------------------------- */
+function crearInventario(){
+		let arrayProductos = new Array();
+		arrayProductos.push(hamburguesa);
+		arrayProductos.push(pizza);
+		arrayProductos.push(menu);
+		arrayProductos.push(menuDia);
+		arrayProductos.push(hamburguesa);
+		arrayProductos.push(ensalada);
+
+		for ( let i = 0; i < arrayProductos.length; i++) {
+		localStorage.setItem('inventario', JSON.stringify(arrayProductos[i]));
+}
+}
 
 function addProduct(product) {
+	let arrayInventario = JSON.parse(localStorage.getItem('inventario'));
+	
+	for (int i=0; i<arrayInventario.length; i++){
+		if(product==arrayInventario[i].nombre){
+		modificarCompra();
+	}
+	}
+	
+}
 
+function modificarCompra(){
 	if (product.cantidad > 0) {
 
 		if (localStorage.getItem('compra') == undefined) {
@@ -142,6 +165,10 @@ function comprar() {
 // Calculos 
 
 function refrescarCabecera() {
+	if (localStorage.getItem('inventario') == undefined ) {
+	crearInventario();
+	}
+
 	if (JSON.parse(localStorage.getItem("compra")) != null) {
 		var longitud = JSON.parse(localStorage.getItem("compra"));
 		document.getElementById('numTotalProductos').innerHTML = longitud.length;
@@ -164,6 +191,7 @@ function estaLogged() {
 
 
 module.exports = {
+	crearInventario : crearInventario,
 	addProduct : addProduct,
 	borrar : borrar,
 	comprar : comprar,

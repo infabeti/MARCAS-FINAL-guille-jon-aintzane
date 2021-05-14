@@ -19,7 +19,8 @@
 <!-- My CSS -->
 <link rel="stylesheet" href="./css/MyCss.css">
 <!-- My JS -->
-<script src="js/bundle.js"></script>
+<script src="js/bUsuario.js"></script>
+<script src="js/bInventario.js"></script>
 </head>
 
 <body>
@@ -77,7 +78,7 @@
             <div class="form-group rounded">
                 <input type="password" class="form-control" placeholder="Contraseña" required id="inputPass">
             </div>
-            <button onclick="module.login()" class="form-button rounded button-l my-3 poiret">Iniciar sesión</button>
+            <button onclick="usuario.login()" class="form-button rounded button-l my-3 poiret">Iniciar sesión</button>
             <p class="pb-4 mb-5 linea2"><a href="forgotpassword.html"><small>¿Has olvidado tu contraseña?</small></a></p>
             <p class="lightText"><small>¿Aún no tienes cuenta?</small></p>
             <p ><a href="register.html" class="poiret" target="self">Regístrate</a></p>
@@ -93,7 +94,7 @@
     
             <form class="mt-3">
                 
-                <button onclick="module.logout()" class="form-button rounded button-l my-3 poiret">Cerrar sesión</button>
+                <button onclick="usuario.logout()" class="form-button rounded button-l my-3 poiret">Cerrar sesión</button>
               
             </form>
         </div>
@@ -137,9 +138,9 @@
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<script type = "text/javascript" src="js/bundle.js">
-    module.refrescarCabecera();
-    module.refrescarLogin();
+<script >
+   inventario.refrescarCabecera();
+    usuario.refrescarLogin();
   </script>
 </body>
 

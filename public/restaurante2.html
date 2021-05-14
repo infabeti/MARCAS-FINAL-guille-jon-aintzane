@@ -20,7 +20,9 @@
 <!-- My CSS -->
 <link rel="stylesheet" href="./css/MyCss.css">
 <!-- My JS -->
-<script src="js/bundle.js"></script>
+<script src="js/bUsuario.js"></script>
+<script src="js/bInventario.js"></script>
+<script src="js/bMapas.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 </head>
@@ -88,7 +90,7 @@
         </div>
       </a>
       <div class="card-footer">
-        <button class="form-button rounded button-l my-3 poiret" onclick="addProduct(menuDia)">Añadir al carrito</button>
+        <button class="form-button rounded button-l my-3 poiret" onclick="inventario.addProduct(menuDia)">Añadir al carrito</button>
       </div>
       </div>
       <div class="card producto">
@@ -100,7 +102,7 @@
         </div>
       </a>
       <div class="card-footer">
-        <button class="form-button rounded button-l my-3 poiret" onclick="addProduct(casera)">Añadir al carrito</button>
+        <button class="form-button rounded button-l my-3 poiret" onclick="inventario.addProduct(casera)">Añadir al carrito</button>
       </div>
       </div>
       <div class="card producto">
@@ -112,7 +114,7 @@
         </div>
       </a>
       <div class="card-footer">
-        <button class="form-button rounded button-l my-3 poiret" onclick="addProduct(ensalada)">Añadir al carrito</button>
+        <button class="form-button rounded button-l my-3 poiret" onclick="inventario.addProduct(ensalada)">Añadir al carrito</button>
       </div>
     </div>
   </div>
@@ -170,9 +172,9 @@
 
  
  <script>
-    refrescarCabecera();
-    refrescarLogin();
-    escribirDistancia2();
+    inventario.refrescarCabecera();
+    usuario.refrescarLogin();
+    cesta.escribirDistancia2();
   </script>
 </script>
 </body>
