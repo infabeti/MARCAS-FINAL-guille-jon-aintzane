@@ -1,7 +1,6 @@
 /* Mostrar en cesta producto ---------------------------------------------------------- */
 
 function refrescarCarrito() {
-	refrescarCabecera();
 	crearCesta();
 	/*if (JSON.parse(localStorage.getItem("compra")) != null) {
 		document.getElementById('precioTotalProductos').innerHTML = localStorage.getItem('monto');

@@ -86,53 +86,51 @@ let tortilla = new Object({
 });
 */
 /* Añadir producto ------------------------------------------- */
-function crearInventario(){
-		let arrayProductos = new Array();
-		arrayProductos.push(hamburguesa);
-		arrayProductos.push(pizza);
-		arrayProductos.push(menu);
-		arrayProductos.push(menuDia);
-		arrayProductos.push(hamburguesa);
-		arrayProductos.push(ensalada);
+function crearInventario() {
+	/*let arrayProductos = new Array();
+	arrayProductos.push(hamburguesa);
+	arrayProductos.push(pizza);
+	arrayProductos.push(menu);
+	arrayProductos.push(menuDia);
+	arrayProductos.push(casera);
+	arrayProductos.push(ensalada);*/
 
-		for ( let i = 0; i < arrayProductos.length; i++) {
-		localStorage.setItem('inventario', JSON.stringify(arrayProductos[i]));
-}
+	let arrayProductos = [hamburguesa, pizza, menu, menuDia, casera, ensalada];
+
+	localStorage.setItem('inventario', JSON.stringify(arrayProductos));
+
 }
 
 function addProduct(product) {
 	let arrayInventario = JSON.parse(localStorage.getItem('inventario'));
-	
-	for (int i=0; i<arrayInventario.length; i++){
-		if(product==arrayInventario[i].nombre){
-		modificarCompra();
-	}
-	}
-	
-}
 
-function modificarCompra(){
-	if (product.cantidad > 0) {
+	for (let i = 0; i < arrayInventario.length; i++) {
+		if (product == arrayInventario[i].nombre) {
+			if (arrayInventario[i].cantidad > 0) {
 
-		if (localStorage.getItem('compra') == undefined) {
-			localStorage.setItem('compra', JSON.stringify(new Array()));
+				if (localStorage.getItem('compra') == undefined) {
+					localStorage.setItem('compra', JSON.stringify(new Array()));
+				}
+
+				arrayInventario[i].cantidad--;
+
+				let arrayCompras = JSON.parse(localStorage.getItem('compra'));
+				arrayCompras.push(arrayInventario[i]);
+				localStorage.setItem('compra', JSON.stringify(arrayCompras));
+				localStorage.setItem('inventario', JSON.stringify(arrayInventario));
+
+				totalCarrito = totalCarrito + parseInt(arrayInventario[i].precio);
+
+				recalcularTotales(product);
+				console.log('añado producto al carrito');
+				refrescarCabecera();
+			} else {
+				alert("No quedan unidades en stock");
+			}
 		}
-
-		product.cantidad--;
-
-		let arrayCompras = JSON.parse(localStorage.getItem('compra'));
-		arrayCompras.push(product);
-		localStorage.setItem('compra', JSON.stringify(arrayCompras));
-
-		totalCarrito = totalCarrito + product.precio;
-
-		recalcularTotales(product);
-		console.log('añado producto al carrito');
-		refrescarCabecera();
-	} else {
-		alert("No quedan unidades en stock");
 	}
 }
+
 
 function borrar() {
 	//localStorage.clear();
@@ -148,11 +146,11 @@ function comprar() {
 			if (comproArrayCompras[i].cantidad = 0) {
 				alert("hay un producto fuera de stock, va a ser eliminado del carrito.");
 				localStorage.removeItem('compra');
-				comproArrayCompras.splice(i,1);
+				comproArrayCompras.splice(i, 1);
 				localStorage.setItem('compra', JSON.stringify(comproArrayCompras));
 			}
 		}
-		if (JSON.parse(localStorage.getItem("compra"))!= undefined) {
+		if (JSON.parse(localStorage.getItem("compra")) != undefined) {
 			alert("¡Compra realizada con éxito!");
 			borrar();
 		}
@@ -165,8 +163,8 @@ function comprar() {
 // Calculos 
 
 function refrescarCabecera() {
-	if (localStorage.getItem('inventario') == undefined ) {
-	crearInventario();
+	if (localStorage.getItem('inventario') == undefined) {
+		crearInventario();
 	}
 
 	if (JSON.parse(localStorage.getItem("compra")) != null) {
@@ -191,11 +189,11 @@ function estaLogged() {
 
 
 module.exports = {
-	crearInventario : crearInventario,
-	addProduct : addProduct,
-	borrar : borrar,
-	comprar : comprar,
-	refrescarCabecera : refrescarCabecera,
-	recalcularTotales : recalcularTotales,
-	estaLogged : estaLogged
+	crearInventario: crearInventario,
+	addProduct: addProduct,
+	borrar: borrar,
+	comprar: comprar,
+	refrescarCabecera: refrescarCabecera,
+	recalcularTotales: recalcularTotales,
+	estaLogged: estaLogged
 }
