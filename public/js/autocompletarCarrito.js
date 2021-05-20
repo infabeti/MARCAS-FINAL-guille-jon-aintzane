@@ -19,38 +19,34 @@ function autocompletarPredeterminado(){
 
 function guardarRegistro(){
 	var nombre = document.getElementById("NomApe").value;
-	var apellido = document.getElementById("NomApe").value;
 	var user = document.getElementById("inputUser").value;
 	var email = document.getElementById("exampleInputEmail1").value;
 	var dir = document.getElementById("inputAddress").value;
 	var loc = document.getElementById("inputCity").value;
 	var cPost = document.getElementById("inputZip").value;
 
-	localStorage.setItem("userNombre", JSON.stringify(nombre));
-	localStorage.setItem("userApellido", JSON.stringify(apellido));
-	localStorage.setItem("userUser", JSON.stringify(user));
-	localStorage.setItem("userEmail", JSON.stringify(email));
-	localStorage.setItem("userDir", JSON.stringify(dir));
-	localStorage.setItem("userLoc", JSON.stringify(loc));
-	localStorage.setItem("userCodPost", JSON.stringify(cPost));
+	localStorage.setItem("userNombre", nombre);
+	localStorage.setItem("userUser", user);
+	localStorage.setItem("userEmail", email);
+	localStorage.setItem("userDir", dir);
+	localStorage.setItem("userLoc", loc);
+	localStorage.setItem("userCodPost", cPost);
 
 }
 
 function autocompletarLS(){
-	var nombre = JSON.parse(localStorage.getItem("userNombre"));
-	var apellido = JSON.parse(localStorage.getItem("userApellido"));
-	var user = JSON.parse(localStorage.getItem("userUser"));
-	var email = JSON.parse(localStorage.getItem("userEmail"));
-	var dir = JSON.parse(localStorage.getItem("userDir"));
-	var loc = JSON.parse(localStorage.getItem("userLoc"));
-	var cPost = JSON.parse(localStorage.getItem("userCodPost"));
+	var nombre = (localStorage.getItem("userNombre"));
+	var user = (localStorage.getItem("userUser"));
+	var email = (localStorage.getItem("userEmail"));
+	var dir = (localStorage.getItem("userDir"));
+	var loc = (localStorage.getItem("userLoc"));
+	var cPost = (localStorage.getItem("userCodPost"));
 
-	document.getElementById("firstName").value = nombre;
-	document.getElementById("lastName").value = apellido;
-	document.getElementById("username").value = user;
-	document.getElementById("email").value = email;
-	document.getElementById("address").value = dir;
-	document.getElementById("country").value = loc;
-	document.getElementById("zip").value = cPost;
+		document.getElementById("firstName").innerHTML = nombre;
+		document.getElementById("username").innerHTML = user;
+		document.getElementById("email").innerHTML = email;
+		document.getElementById("address").innerHTML = dir;
+		document.getElementById("country").innerHTML = loc;
+		document.getElementById("zip").innerHTML = cPost;
 
 }
