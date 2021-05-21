@@ -1,3 +1,5 @@
+var AutComplete=require('./autocompletarCarrito.js');
+
 // ----- LogIn --------------------
 function login() {
     let user = document.getElementById("inputUser").value;
@@ -46,6 +48,9 @@ function logout() {
 // Register
 
 function registrarse() {
+
+    guardarRegistro();
+
     let name = $("#inputUser").val();
     let pass = $("#inputPass").val();
 

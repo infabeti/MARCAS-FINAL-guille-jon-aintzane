@@ -1,22 +1,3 @@
-function autocompletarPredeterminado(){
-	var nombre = "jose"
-	var apellido = "Etxeberria"
-	var user = "Platanzano"
-	var email = "Patata@frita.es"
-	var dir = "Avenida de los tomates 42"
-	var loc = "Bilbao"
-	var cPost = 48032
-
-	document.getElementById("firstName").value = nombre;
-	document.getElementById("lastName").value = apellido;
-	document.getElementById("username").value = user;
-	document.getElementById("email").value = email;
-	document.getElementById("address").value = dir;
-	document.getElementById("country").value = loc;
-	document.getElementById("zip").value = cPost;
-
-}
-
 function guardarRegistro(){
 	var nombre = document.getElementById("NomApe").value;
 	var user = document.getElementById("inputUser").value;
@@ -35,6 +16,14 @@ function guardarRegistro(){
 }
 
 function autocompletarLS(){
+	var emailEstandar="ana@mymail.com"
+	var dirEstandar="Calle del usuario promedio 32"
+	var LocEstandar="Villanormal"
+	var cPostEstandar="54321"
+
+	var UserLoged = localStorage.getItem('usuario')
+
+	if(UserLoged.getElementsByClassName('nombre')!="ANA"){
 	var nombre = (localStorage.getItem("userNombre"));
 	var user = (localStorage.getItem("userUser"));
 	var email = (localStorage.getItem("userEmail"));
@@ -42,11 +31,19 @@ function autocompletarLS(){
 	var loc = (localStorage.getItem("userLoc"));
 	var cPost = (localStorage.getItem("userCodPost"));
 
-		document.getElementById("firstName").innerHTML = nombre;
-		document.getElementById("username").innerHTML = user;
-		document.getElementById("email").innerHTML = email;
-		document.getElementById("address").innerHTML = dir;
-		document.getElementById("country").innerHTML = loc;
-		document.getElementById("zip").innerHTML = cPost;
-
+	document.getElementById("firstName").innerHTML = nombre;
+	document.getElementById("username").innerHTML = user;
+	document.getElementById("email").innerHTML = email;
+	document.getElementById("address").innerHTML = dir;
+	document.getElementById("country").innerHTML = loc;
+	document.getElementById("zip").innerHTML = cPost;
+	}
+	else {
+	document.getElementById("firstName").innerHTML = UserLoged.getElementsByClassName('nombre');
+	document.getElementById("username").innerHTML = UserLoged.getElementsByClassName('nombre');
+	document.getElementById("email").innerHTML = emailEstandar;
+	document.getElementById("address").innerHTML = dirEstandar;
+	document.getElementById("country").innerHTML = LocEstandar;
+	document.getElementById("zip").innerHTML = cPostEstandar;
+	}
 }

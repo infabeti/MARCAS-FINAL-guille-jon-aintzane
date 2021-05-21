@@ -53,6 +53,7 @@ function crearCesta() {
 		itemLi.appendChild(itemSpan);
 		itemLi.appendChild(itemStrong);
 	}
+	
 }
 
 module.exports = {
