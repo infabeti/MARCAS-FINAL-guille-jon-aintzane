@@ -49,56 +49,15 @@ let ensalada = new Object({
 	desc: "ensalada mixta"
 });
 
-/*
-let pintxo = new Object({
-	nombre: "pintxo",
-	cantidad: 5,
-	precio:2,
-	desc: "Pincho de calamar"
-});
 
-let pintxo2 = new Object({
-	nombre: "pintxo2",
-	cantidad: 1,
-	precio:2,
-	desc: "Pincho de jamón"
-});
-
-let refresco = new Object({
-	nombre: "refresco",
-	cantidad: 2,
-	precio:2,
-	desc: "Coca-Cola"
-});
-
-let cafe = new Object({
-	nombre: "cafe",
-	cantidad: 50,
-	precio:1.5,
-	desc: "Café con leche"
-});
-
-let tortilla = new Object({
-	nombre: "tortilla",
-	cantidad: 2,
-	precio:2,
-	desc: "Pincho de tortilla"
-});
-*/
-/* Añadir producto ------------------------------------------- */
 function crearInventario() {
-	/*let arrayProductos = new Array();
-	arrayProductos.push(hamburguesa);
-	arrayProductos.push(pizza);
-	arrayProductos.push(menu);
-	arrayProductos.push(menuDia);
-	arrayProductos.push(casera);
-	arrayProductos.push(ensalada);*/
-
 	let arrayProductos = [hamburguesa, pizza, menu, menuDia, casera, ensalada];
-
+	//console.log('Aqui1'+localStorage.getItem('inventario'));
+	if(localStorage.getItem('inventario')==undefined){
+		localStorage.setItem('inventario', JSON.stringify(new Array()));
+	}
+	//console.log('Aqui2'+localStorage.getItem('inventario'));
 	localStorage.setItem('inventario', JSON.stringify(arrayProductos));
-
 }
 
 function addProduct(product) {
@@ -133,7 +92,6 @@ function addProduct(product) {
 
 
 function borrar() {
-	//localStorage.clear();
 	localStorage.removeItem('compra');
 	localStorage.removeItem('monto');
 	refrescarCarrito();
@@ -179,6 +137,7 @@ function recalcularTotales() {
 
 }
 function estaLogged() {
+	console.log(localStorage.getItem('usuario'));
 	if (localStorage.getItem('usuario') == undefined) {
 		return false;
 	} else {
