@@ -55,7 +55,7 @@ function crearCesta() {
 
 function comprar()
 {
-	alert("Pedido realizado con éxito, tu número de pedido es el 012341212. En breve te llegará un email");
+	alert("Pedido realizado con éxito, tu número de pedido es el AG-012341212. En breve te llegará un email");
 	localStorage.clear();
 }
 
