@@ -113,7 +113,7 @@ function comprar() {
 			borrar();
 		}
 	} else {
-		alert("Debes iniciar sesión para realizar la compra");
+		alert("Debes iniciar sesion para realizar la compra");
 	}
 
 }

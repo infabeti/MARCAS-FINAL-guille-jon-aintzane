@@ -81,13 +81,13 @@ function refrescarLogin() {
     if (isLogged()) {
         ocultarAtributo(loginForm);
         mostrarAtributo(logedForm);
-        document.getElementById("botonLogIn").innerHTML = "Cerrar Sesión";
+        document.getElementById("botonLogIn").innerHTML = "Cerrar Sesion";
         ocultarAtributo(botonRegistrarse);
         ocultarAtributo(registerForm);
     } else {
         mostrarAtributo(loginForm);
         ocultarAtributo(logedForm);
-        document.getElementById("botonLogIn").innerHTML = "Iniciar Sesión";
+        document.getElementById("botonLogIn").innerHTML = "Iniciar Sesion";
         mostrarAtributo(registerForm);
     }
 }
