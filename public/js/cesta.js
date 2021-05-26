@@ -44,7 +44,7 @@ function crearCesta() {
 		var itemSpanText = document.createTextNode('Total');
 		itemSpan.appendChild(itemSpanText);
 		var itemStrong = document.createElement("strong");
-		var itemStrongText = document.createTextNode(JSON.parse(localStorage.getItem("monto")));
+		var itemStrongText = document.createTextNode(parseInt(localStorage.getItem('monto')));
 		itemStrong.appendChild(itemStrongText);
 
 		element.appendChild(itemLi);

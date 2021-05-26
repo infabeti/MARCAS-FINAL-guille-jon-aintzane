@@ -15,19 +15,19 @@ let pizza = new Object({
 	nombre: "pizza",
 	cantidad: 10,
 	precio: 18,
-	desc: "Mozzarela, tomate y jamón"
+	desc: "Mozzarela, tomate y jamon"
 });
 
 let menu = new Object({
 	nombre: "menu",
 	cantidad: 10,
 	precio: 15,
-	desc: "Menú de hamburguesa"
+	desc: "Menu de hamburguesa"
 });
 
 
 let menuDia = new Object({
-	nombre: "menú del día",
+	nombre: "menú del dia",
 	cantidad: 20,
 	precio: 18,
 	desc: "Primero, segundo, postre"
@@ -53,7 +53,7 @@ let ensalada = new Object({
 function crearInventario() {
 	let arrayProductos = [hamburguesa, pizza, menu, menuDia, casera, ensalada];
 	//console.log('Aqui1'+localStorage.getItem('inventario'));
-	if(localStorage.getItem('inventario')==undefined){
+	if (localStorage.getItem('inventario') == undefined) {
 		localStorage.setItem('inventario', JSON.stringify(new Array()));
 	}
 	//console.log('Aqui2'+localStorage.getItem('inventario'));
@@ -77,10 +77,13 @@ function addProduct(product) {
 				arrayCompras.push(arrayInventario[i]);
 				localStorage.setItem('compra', JSON.stringify(arrayCompras));
 				localStorage.setItem('inventario', JSON.stringify(arrayInventario));
+				if (localStorage.getItem('monto') != undefined) {
+					totalCarrito = parseInt(localStorage.getItem('monto'));
+				}
 
 				totalCarrito = totalCarrito + parseInt(arrayInventario[i].precio);
 
-				recalcularTotales(product);
+				recalcularTotales();
 				console.log('añado producto al carrito');
 				refrescarCabecera();
 			} else {
@@ -133,6 +136,7 @@ function refrescarCabecera() {
 
 
 function recalcularTotales() {
+	console.log(totalCarrito);
 	localStorage.setItem('monto', totalCarrito);
 
 }
