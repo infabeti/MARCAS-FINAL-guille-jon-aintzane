@@ -1,17 +1,15 @@
+
+
 /* Mostrar en cesta producto ---------------------------------------------------------- */
 
 function refrescarCarrito() {
 	crearCesta();
-	/*if (JSON.parse(localStorage.getItem("compra")) != null) {
-		document.getElementById('precioTotalProductos').innerHTML = localStorage.getItem('monto');
-	} else {
-		if (precioTotalProductos != undefined) {
-			document.getElementById('precioTotalProductos').innerHTML = 0;
-		}
-	}*/
+
 }
 
 function crearCesta() {
+
+
 	var element = document.getElementById("listaCesta");
 
 	var items = JSON.parse(localStorage.getItem("compra"));
@@ -53,11 +51,17 @@ function crearCesta() {
 		itemLi.appendChild(itemSpan);
 		itemLi.appendChild(itemStrong);
 	}
-	
+}
+
+function comprar()
+{
+	alert("Pedido realizado con éxito, tu número de pedido es el 012341212. En breve te llegará un email");
+	localStorage.clear();
 }
 
 module.exports = {
 
 	refrescarCarrito : refrescarCarrito,
-	crearCesta : crearCesta
+	crearCesta : crearCesta, 
+	comprar:comprar
 }
