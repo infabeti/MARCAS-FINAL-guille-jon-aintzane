@@ -20,11 +20,13 @@ function autocompletarLS() {
 	var dirEstandar = "Calle del usuario promedio 32";
 	var LocEstandar = "Villanormal";
 	var cPostEstandar = "54321";
+	var pedido = "AG-012341212";
 	if (localStorage.getItem('usuario') != undefined) {
 		var UserLoged = JSON.parse(localStorage.getItem('usuario'));
 		console.log(UserLoged);
 
 		if (UserLoged.nombre == 'ana' || UserLoged.nombre == 'pepe') {
+			document.getElementById("pedido").innerHTML = pedido;
 			document.getElementById("firstName").placeholder = UserLoged.nombre;
 			document.getElementById("username").placeholder = UserLoged.nombre;
 			document.getElementById("email").placeholder = emailEstandar;
@@ -40,6 +42,7 @@ function autocompletarLS() {
 			var loc = (localStorage.getItem("userLoc"));
 			var cPost = (localStorage.getItem("userCodPost"));
 
+			document.getElementById("pedido").innerHTML = pedido;
 			document.getElementById("email").placeholder = emailEstandar;
 			document.getElementById("firstaNme").placeholder = emailEstandar;
 
