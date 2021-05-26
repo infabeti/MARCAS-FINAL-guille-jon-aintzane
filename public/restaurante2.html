@@ -22,9 +22,7 @@
 <!-- My JS -->
 <script src="js/bUsuario.js"></script>
 <script src="js/bInventario.js"></script>
-<script src="js/bMapas.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
 </head>
 
 <body class="restaurante2">
@@ -166,15 +164,15 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
   <script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGnERHKf5bVwS1LxdWRBnRo-pT1LPjixo&region=ES&language=es&callback=initMap&libraries=&v=weekly"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGnERHKf5bVwS1LxdWRBnRo-pT1LPjixo&region=ES&language=es&callback=mapas.initMap&libraries=&v=weekly"
   async
 ></script>
-
+<script src="js/bMapas.js"></script>
  
  <script>
     inventario.refrescarCabecera();
     usuario.refrescarLogin();
-    cesta.escribirDistancia2();
+    mapas.escribirDistancia2();
   </script>
 </script>
 </body>

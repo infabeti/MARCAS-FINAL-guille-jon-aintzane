@@ -23,7 +23,7 @@ function autocompletarLS() {
 	var pedido = "AG-012341212";
 	if (localStorage.getItem('usuario') != undefined) {
 		var UserLoged = JSON.parse(localStorage.getItem('usuario'));
-		console.log(UserLoged);
+	
 
 		if (UserLoged.nombre == 'ana' || UserLoged.nombre == 'pepe') {
 			document.getElementById("pedido").innerHTML = pedido;
@@ -35,18 +35,15 @@ function autocompletarLS() {
 			document.getElementById("zip").placeholder = cPostEstandar;
 		}
 		else {
-			var nombre = (localStorage.getItem("userNombre"));
-			var user = (localStorage.getItem("userUser"));
-			var email = (localStorage.getItem("userEmail"));
-			var dir = (localStorage.getItem("userDir"));
-			var loc = (localStorage.getItem("userLoc"));
-			var cPost = (localStorage.getItem("userCodPost"));
-
+			var nombre = String(localStorage.getItem('userNombre'));
+			var user = String(localStorage.getItem('userUser'));
+			var email = String(localStorage.getItem('userEmail'));
+			var dir = String(localStorage.getItem('userDir'));
+			var loc = String(localStorage.getItem('userLoc'));
+			var cPost = String(localStorage.getItem('userCodPost'));
+			
 			document.getElementById("pedido").innerHTML = pedido;
-			document.getElementById("email").placeholder = emailEstandar;
-			document.getElementById("firstaNme").placeholder = emailEstandar;
-
-			document.getElementById("firstaNme").placeholder = nombre;
+			document.getElementById("firstName").placeholder = nombre;
 			document.getElementById("username").placeholder = user;
 			document.getElementById("email").placeholder = email;
 			document.getElementById("address").placeholder = dir;

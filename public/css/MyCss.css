@@ -349,3 +349,9 @@ footer {background-color: #111;}
 .restaurante2 {background-color: pink;}
 .restaurante2i {width: 100%;
 opacity: 60%;}
+
+#map {
+    height: 50%;
+
+    }
+ 

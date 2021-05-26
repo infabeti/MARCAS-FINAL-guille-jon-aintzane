@@ -1,4 +1,4 @@
-var AutComplete=require('./autocompletarCarrito.js');
+var autocompletar=require('./autocompletarCarrito.js');
 
 // ----- LogIn --------------------
 function login() {
@@ -49,10 +49,10 @@ function logout() {
 
 function registrarse() {
 
-    guardarRegistro();
+   autocompletar.guardarRegistro();
 
-    let name = $("#inputUser").val();
-    let pass = $("#inputPass").val();
+    let name = document.getElementById('inputUser').value;
+    let pass = document.getElementById('inputPass').value;
 
     if (localStorage.getItem('registrados') == undefined) {
         localStorage.setItem('registrados', JSON.stringify(new Array()));

@@ -37,7 +37,6 @@ navigator.geolocation.getCurrentPosition(getPosition);
 
 function initMap() {
 
-  
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: latitude, lng: longitude},
     zoom: 12,
