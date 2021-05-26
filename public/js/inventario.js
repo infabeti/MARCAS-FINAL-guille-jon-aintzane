@@ -27,7 +27,7 @@ let menu = new Object({
 
 
 let menuDia = new Object({
-	nombre: "menú del dia",
+	nombre: "menu del dia",
 	cantidad: 20,
 	precio: 18,
 	desc: "Primero, segundo, postre"
