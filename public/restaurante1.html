@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Food-Eat! - Restaurantes en Elorrieta - </title>
+<meta name="description" content="Facilitamos a la hostelería de Elorrieta facilidades para promocionar su negocio">
+<meta name="keywords" content="restaurantes, bares, cafeterías, panaderías, tahonas, elorrieta, SanInacio, Bilbao, comida">
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!--Icon library-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--fonts-->
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Merriweather&family=Pacifico&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+<!-- My CSS -->
+<link rel="stylesheet" href="./css/MyCss.css">
+<!-- My JS -->
+<script src="js/bUsuario.js"></script>
+<script src="js/bInventario.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+</head>
+
+<body class="restaurante1">
+<header class="container-fluid sticky-top m-0 p-0 ">
+        <nav class="col-12 navbar navbar-expand-md m-0 ">
+            <button class="navbar-toggler boton m-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <p class="poiret">Food-Eat!</p>>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item elmenu px-2 px-lg-5 pt-1 pt-md-0 text-center ">
+                        <a class="nav-link active p-0 elmenu poiret" href="landingPage.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown elmenu px-2 px-lg-5 pt-1 pt-md-0 text-center">
+                        <a class="nav-link dropdown-toggle d-block p-0 elmenu poiret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Restaurantes</a>
+                        <div class="dropdown-menu fondomenu ">
+                            <div class="row p-3">
+                                <p class="desplegablenolink col-12 poiret">Todos los restaurantes y cafeterías</p>
+                                <div class="col-12 col-md-4">
+                                    <a class="dropdown-item desplegable" href="restaurante1.html">Restaurante1</a>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <a class="dropdown-item desplegable" href="restaurante2.html">Restaurante2</a>
+                                </div>
+                            </div>
+                        </div>
+                        <li class="nav-item elmenu px-2 px-lg-5 pt-3 pt-md-0 text-center">
+                          <a class="nav-link p-0 elmenu poiret" href="iniciarsesion.html" id="botonLogIn">Iniciar sesion</a>
+                      </li>
+                      <li class="nav-item elmenu px-2 px-lg-5 pt-3 pt-md-0 text-center">
+                          <a class="nav-link p-0 elmenu poiret" href="register.html"id="botonRegistrarse">Registrarse</a>
+                      </li>
+                        <li class="nav-item elmenu pl-2 pl-lg-2 pt-3 pt-md-0 text-center">
+                            <a class="pl-md-5 fa fa-shopping-cart fa-lg pt-2" href="carrito.html" target="self"></a>
+                            <label class="contadorCarrito" id="numTotalProductos"></label>
+                        </li>
+                </ul>
+            </div>
+    </nav>
+
+
+</header>
+
+
+
+   <!--*************************************************************************************************-->  
+   <main class="mt-4 container">
+    <div >
+      <div class="card " style="width: 50rem ;  "  >
+      <img src="/img/goikoGrill.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h2 class="card-title text-center"><b>Goiko Grill</b></h2>
+        <p class="card-text"><u>Direccion</u></p>
+        <p > calle Gral.Concha-28 </p> <br>
+        <div id='map'> </div>
+        <p>La distancia desde su localización hasta el restaurante es de:  <span id="distancia1"></span> km.</p>
+      </div>
+      </div>   
+    </div>
+
+    <div class="card-deck mt-5">
+        <div class="card producto">
+          <a href="restaurante1.html" target="self">
+          <img class="card-img-top" src="../img/hamburger.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title poiret">Hamburguesa</h5>
+            <p class="card-text">Queso, lechuga y tomate.</p>
+          </a>
+          </div>
+          <div class="card-footer">
+            <button class="form-button rounded button-l my-3 poiret" onclick="inventario.addProduct('hamburguesa')">Añadir al carrito</button>
+          </div>
+        </div>
+        <div class="card producto">
+          <a href="restaurante1.html" target="self">
+          <img class="card-img-top" src="../img/pizza.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title poiret">Pizza</h5>
+            <p class="card-text mb-5 pb-3">Mozzarella, tomate, orégano.</p>
+          </div>
+        </a>
+          <div class="card-footer">
+            <button class="form-button rounded button-l my-3 poiret" onclick="inventario.addProduct('pizza')">Añadir al carrito</button>
+          </div>
+        </div>
+        <div class="card producto">
+          <a href="restaurante1.html" target="self">
+          <img class="card-img-top" src="../img/restaurant.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title poiret">Menú hamburguesa con patatas</h5>
+            <p class="card-text">Menú para dos.</p>
+          </div>
+        </a>
+          <div class="card-footer">
+            <button class="form-button rounded button-l my-3 poiret" onclick="inventario.addProduct('hamburguesa')">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+</main>
+
+
+<footer class="container-fluid mx-0 mt-5 mb-0 px-5 pt-4 ">
+<div class="row ">
+
+    <section class="col-12 col-sm-6 col-md-3">
+        <p class="text-center"><a href="#" target="self">Mapa del sitio</a></p>
+        <p class="text-center"><a href="#" target="self">Datos generales</a></p>
+        <p class="text-center"><a href="#" target="self">Trabaja con nosotros</a></p>
+    </section>
+    <section class="col-12 col-sm-6 col-md-3">
+        <p class="text-center"><a href="#" target="self">Condiciones generales</a></p>
+        <p class="text-center"><a href="#" target="self">Condiciones de compra</a></p>
+        <p class="text-center"><a href="#" target="self">Política de privacidad</a></p>
+    </section>
+    <section class="col-12 col-sm-6 col-md-3">
+        <p class="text-center"><a href="#" target="self">Recomendaciones</a></p>
+        <p class="text-center"><a href="#" target="self">Teléfono</a></p>
+        <p class="text-center"><a href="#" target="self">Dirección</a></p>
+    </section>
+    <section class="col-12 col-sm-6 col-md-3">
+        <p class="text-center">¡Síganos!</p>
+        <div class="text-center">
+            <a href="https://es-es.facebook.com/" target="blank" class="fa fa-lg fa-facebook px-1"></a>
+            <a href="https://www.instagram.com/" target="blank" class="fa fa-lg fa-instagram px-1"></a>
+            <a href="https://twitter.com/explore" target="blank" class="fa fa-lg fa-twitter px-1"></a>
+            <a href="https://www.youtube.com/" target="blank" class="fa fa-lg fa-youtube px-1"></a>
+        </div>
+    </section>
+    <p class="col-12 mt-4 text-center">Food-Eat © 2020 </p>
+</div>
+</footer>
+</footer>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGnERHKf5bVwS1LxdWRBnRo-pT1LPjixo&region=ES&language=es&callback=mapas.initMap&libraries=&v=weekly"
+      async
+    ></script>
+    <script src="js/bMapas.js"></script>
+
+
+<script>
+    inventario.refrescarCabecera();
+    usuario.refrescarLogin();
+    mapas.escribirDistancia();
+    
+  </script>
+</body>
+
+</html>

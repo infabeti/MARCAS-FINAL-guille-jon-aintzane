@@ -1,0 +1,357 @@
+body {
+    background:#fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #333;
+}
+
+
+/********TEXT********************************************************************/
+
+a {
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.poiret {
+    font-family: 'Poiret One', cursive;
+    font-size: 1rem;
+}
+
+@media (min-width: 1000px) {
+    .poiret {
+        font-size: 2rem;
+    }
+}
+
+.seccion {
+    font-size: 1rem;
+}
+
+.miniseccion {
+    font-size: 1.5rem;
+}
+
+@media (min-width: 550px) {
+    .seccion {
+        font-size: 4rem;
+    }
+    .miniseccion {
+        font-size: 3rem;
+    }
+}
+/*****HEADER,FOOTER*************************************************************************************************/
+header {background-color: orange;}
+
+header a,
+footer a,
+.header a {
+    color: #111;
+}
+
+header a:hover,
+footer a:hover,
+.header a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.linea {
+    border-bottom: 1px solid #111;
+}
+
+
+/****FOOTER***********************************************************************************************************/
+
+footer p {
+    color: #eee;
+    font-size: 0.8rem;
+}
+
+footer a { color: #ddd;}
+
+footer a:hover { color: #fff;}
+
+footer {background-color: #111;}
+
+/****MENU*************************************************************************************************************/
+
+.elmenu {
+    color: #333;
+    position: static;
+    font-size: 2rem;
+}
+
+.fondomenu {
+    padding: 2% 10% 0% 10%;
+    background-color: orange;
+    position: absolute;
+    top: 70%;
+    left: -5%;
+    right: -5%;
+    min-width: 100%;
+}
+
+.desplegable,
+.desplegablenolink {
+    color: #111;
+    transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+}
+
+
+.active,.elmenu:hover {
+    color: #000;
+}
+
+
+.desplegable:hover {
+    background-color: rgba(253, 227, 167, 0.2);
+    color: #000;
+
+}
+
+.boton {
+    border: 0px;
+}
+
+@media (min-width: 550px) {
+    .desplegable {
+        font-size: 1.3rem;
+    }
+}
+
+/*****Productos***********************************************************************************************************/
+
+/*.producto {
+    transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+}
+
+.producto:hover {
+    transform: scale(1.2);
+}*/
+
+.carrito {
+    display: block;
+    background-color: 111;
+}
+
+.contadorCarrito {
+	background-color: rgba(253, 227, 167, 1);
+    border-radius: 50%;
+    font-size: 14px;
+    padding: 0px 6px;
+}
+/****Producto********************************************************************************************************/
+
+.fondoTexto {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .fondo {
+        background: url(../imagenes/size/Fondolibro1_768.jpg) no-repeat;
+        background-position: center top;
+        background-size: 100% auto;
+    }
+    .fondoTexto {
+        display: inline;
+    }
+    .fondoTitle {
+        font-size: 3.2rem;
+        text-shadow: 2px 2px 0px #000033;
+    }
+    .fondoSubtitle {
+        text-shadow: 2px 2px 0px #000033;
+        line-height: 2.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .fondo {
+        background: url(../imagenes/size/Fondolibro1_992.jpg) no-repeat;
+        background-position: center top;
+        background-size: 100% auto;
+    }
+    .fondoTexto {
+        display: inline;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fondo {
+        background: url(../imagenes/size/Fondolibro1_1200.jpg) no-repeat;
+        background-position: center top;
+        background-size: 100% auto;
+    }
+    .fondoTexto {
+        display: inline
+    }
+    .fondoTitle {
+        font-size: 3.8rem;
+    }
+    .fondoSubtitle {
+        font-size: 2rem;
+        line-height: 3.5rem;
+    }
+}
+
+.marcoNovedades {
+    border: solid #9999cc 1px;
+    background-color: #e8e0dd;
+}
+
+.marcoProducto {
+    background-color: rgba(232, 224, 221, 0.8);
+    border: solid #e8e0dd 1px;
+}
+
+.nuevo {
+    display: inline-block;
+    color: #C21D20;
+    border: solid #C21D20 1px;
+    text-transform: uppercase;
+}
+
+.titulo {
+    font-size: 1.5rem;
+}
+
+.botonCompra {
+    width: 100% !important;
+    background-color: #ffa64e;
+    border: solid #333 1px;
+    box-shadow: 0px 3px 2px 0px #a39e9d;
+    color: #333;
+    display: block;
+}
+
+.botonCompra:hover {
+    background-color: #ff9933;
+    border: solid #333 1px;
+    color: #000;
+}
+
+.ficha {
+    font-size: 1rem;
+}
+
+.checked {
+    color: #ffce7f;
+}
+
+.non-checked {
+    color: #9999cc;
+}
+
+
+/****FORM***********************************************************************************************************/
+
+.cajita {
+    max-width: 95%;
+    margin: 0 auto;
+    background-color: rgba(250, 190, 88, 0.8);
+    padding: 15px 20px 20px 20px;
+}
+
+@media (min-width: 768px) {
+    .cajita {
+        max-width: 40%;
+    }
+}
+
+.loginLogo {
+    color: #000;
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: -10px;
+    margin-bottom: 0;
+}
+
+.button-l {
+    width: 100% !important;
+}
+
+.form-button {
+    background-color: rgba(253, 227, 167, 1);
+    ;
+    border-color:rgba(245, 171, 53, 0.5);
+    ;
+    color: #000;
+}
+
+.form-button:hover,
+.form-button:focus,
+.form-button:active,
+.form-button.active,
+.form-button:active:focus,
+.form-button:active:hover,
+.form-button.active:hover,
+.form-button.active:focus {
+    background-color: rgb(255, 243, 215, 1);
+    border-color:rgb(255, 255, 255);
+    color: #000;
+}
+
+.button-l {
+    width: 100% !important;
+}
+
+.form-control,
+.border-line {
+    background-color: rgba(245, 171, 53, 1);
+    background-image: none;
+    border: 1px solid rgba(245, 171, 53, 1);
+    border-radius: 1px;
+    color: #111;
+    display: block;
+    padding: 6px 12px;
+    transition: border-color 0.5s ease-in-out 0s, box-shadow 0.5s ease-in-out 0s;
+    width: 100%;
+}
+
+.form-control:focus,
+.border-line:focus {
+    border-color: #e6e6e6;
+    background-color: rgba(253, 227, 167, 1);
+    color: #111;
+}
+
+.form-control,
+.form-control:focus {
+    box-shadow: none;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #111;
+}
+
+.linea2 {
+    border-bottom: 1px solid #111;
+}
+
+
+/***restaurante*******************************************************************************************************/
+.restaurante1 {background-color: #333;}
+.restaurante2 {background-color: pink;}
+.restaurante2i {width: 100%;
+opacity: 60%;}
+
+#map {
+    height: 400px;
+
+    }
+ 
